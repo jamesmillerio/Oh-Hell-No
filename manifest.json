@@ -1,0 +1,34 @@
+{
+  "name": "Oh Hell No",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "An extension that modifes the 'Skills & Expertise' section of LinkedIn to allow one to rebuke the person's claims.",
+  "icons": {
+	"48": "images/icon48.png",
+	"128": "images/icon128.png"
+  },
+  "permissions": [
+    "http://ajax.googleapis.com",
+	"http://www.parsecdn.com"
+  ],
+  "content_scripts": [
+    {
+		"matches": ["http://www.linkedin.com/profile/view*"],
+		"css": [
+				"css/toast.css"
+		],
+		"js": [
+			"scripts/jquery-1.7.2.min.js", 
+			"scripts/parse-1.0.9.min.js",
+			"scripts/jquery.toast.min.js",
+			"scripts/ohhellno.js"
+			]
+	}
+  ],
+  "permissions": [
+    "notifications", "tabs", "http://www.linkedin.com/*"
+  ],
+  "web_accessible_resources": [
+	"images/*"
+  ]
+}
